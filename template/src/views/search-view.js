@@ -1,11 +1,10 @@
-// import { toGifSimple } from './movie-views.js';
+import { apiKey } from "../common/constants.js";
+import { fetchGIFs } from "./home-view.js";
 
-// export const toSearchView = (gifs, searchTerm) => `
-// <div id="gifs">
-//   <h1>Gifs found for "${searchTerm}":</h1>
-//   <div class="content">
-//     ${gifs.map(toGifSimple).join('\n') || '<p>Add some gifs to favorites to see them here.</p>'}
-//   </div>
-// </div>
-// `;
-// TODO
+export async function searchGIFs() {
+    const searchInput = document.getElementById('search');
+    const query = searchInput.value;
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=10`;
+    fetchGIFs(url, 'container');
+    searchInput.value = '';
+}
