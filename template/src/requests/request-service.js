@@ -1,14 +1,19 @@
+import { apiKey } from '../common/constants.js';
 import { getCategories, getGetGifsGeneralInfo, getGifById, getCategory, searchGifs } from '../data/gifs.js';
 
-// export const loadCategories = () => {
-//   TODO // missing implementation
-// };
+export const loadCategories = async () => {
+    const response = await fetch(`https://api.giphy.com/v1/gifs/categories?api_key=${apiKey}`);
+    const category = await response.json();
 
-// export const loadCategory = (id = null) => {
-//   const category = getCategory(id);
+    return category;
+};
 
-//   return category;
-// }
+export const loadCategory = async (id = null) => {
+    //   const response = await fetch(`https://api.giphy.com/v1/gifs/categories?api_key=${apiKey}`);
+    //     const category = await response.json();
+
+    //   return category;
+}
 
 // export const loadMovies = (categoryId = null) => {
 //   TODO // missing implementation
