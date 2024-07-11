@@ -23,6 +23,9 @@ export const loadCategory = async (id = null) => {
 //   TODO // missing implementation
 // };
 
-// export const loadSearchMovies = (searchTerm = '') => {
-//   TODO // missing implementation
-// };
+export const loadSearchGifs = async (searchTerm = '') => {
+    const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURI(searchTerm)}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`);
+    const gifSearch = await response.json();
+
+    return gifSearch;
+};
