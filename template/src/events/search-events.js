@@ -4,12 +4,8 @@ import { q } from "./helpers.js";
 import { loadSearchGifs } from "../requests/request-service.js";
 
 export const renderSearchItems = async (searchTerm) => {
-  const searchInput = document.getElementById('search');
-  const query = searchInput.value.trim();
-
-  if (query) {
-    const gifs = await loadSearchGifs(query);
+  if (searchTerm) {
+    const gifs = await loadSearchGifs(searchTerm);
     q(CONTAINER_SELECTOR).innerHTML = toGIFsView(gifs.data);
-    searchInput.value = '';
   }
 };
