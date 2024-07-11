@@ -1,4 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* Existing CSS */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the logo container */
+  position: relative;
+  perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.logo-image {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  margin-right: 5px; /* Space between image and text */
+}
+
+.logo {
+  font-family: 'Lobster', cursive;
+  font-size: 8em;
+  color: #e0f7fa; /* Light cyan */
+  text-shadow: 2px 2px 0 #1c311f, 4px 4px 0 #1c311f, 6px 6px 0 #1c311f;
+  animation: move-3d 15s infinite alternate ease-in-out, shine 5s infinite;
+  transform-style: preserve-3d; /* Maintain 3D transformation for child elements */
+}
+
+@keyframes move-3d {
+  0% {
+    transform: rotateY(0deg) translateZ(0px);
+  }
+  50% {
+    transform: rotateY(360deg) translateZ(150px);
+  }
+  100% {
+    transform: rotateY(720deg) translateZ(0px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 #000, 6px 6px 0 #000;
+  }
+  50% {
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8), 4px 4px 5px rgba(255, 255, 255, 0.8), 6px 6px 5px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 #000, 6px 6px 0 #000;
+  }
+}
+
+/* Rest of your CSS */
 
 body {
   background: #2f4a30; /* Dark green */
@@ -54,25 +103,6 @@ nav a:hover {
   height: 30px;
   width: 500px;
   padding: 1px 15px;
-}
-
-.logo {
-  font-family: 'Lobster', cursive;
-  font-size: 8em;
-  color: #e0f7fa; /* Light cyan */
-  animation: move 2s infinite alternate;
-}
-
-@keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(20px);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 
 #container {
