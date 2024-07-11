@@ -4,7 +4,8 @@
 // import { loadPage, renderCategory, renderMovieDetails } from './events/navigation-events.js';
 // import { renderSearchItems } from './events/search-events.js';
 import { renderSearchItems } from "./events/search-events.js";
-
+import { fetchTrendingGIFs } from "./views/home-view.js";
+import { showFavorites } from "./views/favorites-view.js";
 // document.addEventListener('DOMContentLoaded', () => {
 
 //   // add global listener
@@ -49,4 +50,14 @@ document.getElementById('search').addEventListener('keypress', function (event) 
         const searchTerm = event.target.value.trim();
         renderSearchItems(searchTerm);
     }
+});
+
+document.getElementById('favorites-link').addEventListener('click', function (event) {
+    event.preventDefault();
+    showFavorites();
+});
+
+document.getElementById('trending-link').addEventListener('click', function (event) {
+    event.preventDefault();
+    fetchTrendingGIFs();
 });
