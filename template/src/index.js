@@ -3,6 +3,7 @@
 // import { q } from './events/helpers.js';
 // import { loadPage, renderCategory, renderMovieDetails } from './events/navigation-events.js';
 // import { renderSearchItems } from './events/search-events.js';
+import { renderSearchItems } from "./events/search-events.js";
 
 // document.addEventListener('DOMContentLoaded', () => {
 
@@ -42,3 +43,9 @@
 // });
 
 // TODO
+
+document.getElementById('search').addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        renderSearchItems();
+    }
+});
