@@ -4,21 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GIPHY</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
-  <header>
-    <div class="logo">GIPHY</div>
+  <div id="app">
+    <header>
+      <div class="logo">GIPHY</div>
+    </header>
     <nav>
-      <a href="#" data-page="home">Trending</a>
-      <a href="#" data-page="favorites">Favorites</a>
-      <a href="#" data-page="upload">Upload</a>
-      <a href="#" data-page="about">About</a>
-      <input type="text" id="search" placeholder="Search">
+      <a href="#" class="nav-link" data-page="trending" id="trending-link">Trending</a>
+      <a href="#" class="nav-link" data-page="favorites" id="favorites-link">Favorites</a>
+      <a href="#" class="nav-link" data-page="upload">Upload</a>
+      <a href="#" class="nav-link" data-page="about" id="about-link">About</a>
     </nav>
-  </header>
-  <div id="container"></div>
-  <footer>Footer</footer>
+    <div class="search-container">
+      <input id="search" type="text" placeholder="Search">
+    </div>
+    <div id="container" class="grid" id="gif-grid">
+      <!-- GIFs will be dynamically inserted here -->
+    </div>
+    <footer>Footer</footer>
+  </div>
   <script src="./src/index.js" type="module"></script>
 </body>
 </html>
