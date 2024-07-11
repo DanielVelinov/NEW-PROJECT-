@@ -46,6 +46,7 @@ import { renderSearchItems } from "./events/search-events.js";
 
 document.getElementById('search').addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
-        renderSearchItems();
+        const searchTerm = event.target.value.trim();
+        renderSearchItems(searchTerm);
     }
 });
