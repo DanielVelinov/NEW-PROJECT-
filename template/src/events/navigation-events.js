@@ -1,4 +1,6 @@
 import { CONTAINER_SELECTOR, TRENDING } from '../common/constants.js';
+import { loadCategories } from '../requests/request-service.js';
+import { toCategoriesView } from '../views/category-view.js';
 import { toTrendingView } from '../views/home-view.js';
 import { toGifFromCategoryView } from '../views/movie-views.js';
 import { q, setActiveNav } from './helpers.js';
@@ -36,8 +38,10 @@ const renderTrending = () => {
   q(CONTAINER_SELECTOR).innerHTML = toTrendingView();
 };
 
-const renderCategories = () => {
-  // missing implementation
+const renderCategories = async () => {
+  const categories = await loadCategories();
+
+  q(CONTAINER_SELECTOR).innerHTML = toCategoriesView(categories);
 };
 
 const renderFavorites = () => {
