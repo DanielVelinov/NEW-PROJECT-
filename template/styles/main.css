@@ -3,24 +3,30 @@
 .logo-container {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the logo container */
+  justify-content: center;
+  /* Center the logo container */
   position: relative;
-  perspective: 1000px; /* Add perspective for 3D effect */
+  perspective: 1000px;
+  /* Add perspective for 3D effect */
 }
 
 .logo-image {
-  width: 100px; /* Adjust as needed */
+  width: 100px;
+  /* Adjust as needed */
   height: auto;
-  margin-right: 5px; /* Space between image and text */
+  margin-right: 5px;
+  /* Space between image and text */
 }
 
 .logo {
   font-family: 'Lobster', cursive;
   font-size: 8em;
-  color: #e0f7fa; /* Light cyan */
+  color: #e0f7fa;
+  /* Light cyan */
   text-shadow: 2px 2px 0 #1c311f, 4px 4px 0 #1c311f, 6px 6px 0 #1c311f;
   animation: move-3d 15s infinite alternate ease-in-out, shine 5s infinite;
-  transform-style: preserve-3d; /* Maintain 3D transformation for child elements */
+  transform-style: preserve-3d;
+  /* Maintain 3D transformation for child elements */
 }
 
 
@@ -29,9 +35,11 @@
   0% {
     text-shadow: 2px 2px 0 #000, 4px 4px 0 #000, 6px 6px 0 #000;
   }
+
   50% {
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8), 4px 4px 5px rgba(255, 255, 255, 0.8), 6px 6px 5px rgba(255, 255, 255, 0.8);
   }
+
   100% {
     text-shadow: 2px 2px 0 #000, 4px 4px 0 #000, 6px 6px 0 #000;
   }
@@ -40,8 +48,10 @@
 /* Rest of your CSS */
 
 body {
-  background: #2f4a30; /* Dark green */
-  color: #e0f2f1; /* Very light cyan */
+  background: #2f4a30;
+  /* Dark green */
+  color: #e0f2f1;
+  /* Very light cyan */
   font-family: Arial, sans-serif;
 }
 
@@ -50,32 +60,38 @@ header {
   justify-content: center;
   align-items: center;
   height: 200px;
-  background: #2f4a30; /* Dark green */
+  background: #2f4a30;
+  /* Dark green */
 }
 
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #2f4a30; /* Dark green */
+  background: #2f4a30;
+  /* Dark green */
   padding: 10px;
 }
 
 nav a {
-  color: #f4f4f4; /* Light teal */
+  color: #f4f4f4;
+  /* Light teal */
   margin: 0 20px;
   text-decoration: none;
   padding: 10px 40px;
   border-radius: 10px;
-  border: 2px solid #b5b5b5; /* Light teal outline */
+  border: 2px solid #b5b5b5;
+  /* Light teal outline */
   transition: color 0.3s, background-color 0.3s, transform 0.3s, box-shadow 0.3s;
   font-size: 4em;
   font-family: "Fantasy";
 }
 
 nav a:hover {
-  color: #2f4a30; /* Dark green */
-  background-color: #2f4a30; /* Light teal */
+  color: #2f4a30;
+  /* Dark green */
+  background-color: #2f4a30;
+  /* Light teal */
   transform: scale(1.2);
 }
 
@@ -87,8 +103,10 @@ nav a:hover {
 
 .search-container input#search {
   font-size: 20px;
-  background-color: #ffffff; /* White */
-  color: #000000; /* Black */
+  background-color: #ffffff;
+  /* White */
+  color: #000000;
+  /* Black */
   border: 1px solid gray;
   border-radius: 4px;
   height: 30px;
@@ -105,7 +123,8 @@ footer {
   text-align: center;
   padding: 10px;
   color: #ccc;
-  background: #2f4a30; /* Dark green */
+  background: #2f4a30;
+  /* Dark green */
 }
 
 .hidden {
@@ -123,11 +142,13 @@ span.favorite {
 }
 
 span.favorite.active {
-  color: rgb(198, 0, 0); /* Dark red */
+  color: rgb(198, 0, 0);
+  /* Dark red */
 }
 
 span.favorite:hover {
-  color: rgb(76, 9, 9); /* Darker red */
+  color: rgb(76, 9, 9);
+  /* Darker red */
 }
 
 .flexbox {
@@ -228,4 +249,24 @@ span.favorite:hover {
   bottom: 10px;
   right: 10px;
   font-size: 24px;
+}
+
+#search-results .content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+
+.gif {
+  flex: 1 1 calc(25% - 20px);
+  box-sizing: border-box;
+  margin: 10px;
+}
+
+.gif img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
