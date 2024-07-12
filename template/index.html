@@ -5,26 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GIPHY</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/minecraft">
   <link rel="stylesheet" href="./styles/main.css">
+  <style>
+    body {
+      margin: 100;
+      padding-top: 100px; /* Място за фиксирания хедър */
+      background: linear-gradient(90deg, #0f1e0f, #1a331a); /* Тъмно зелено към по-светло зелено */
+      font-family: Arial, sans-serif;
+      color: #e0f2f1;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(90deg, #0f1e0f, #1a331a);
+      padding: 10px 10px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+      margin-left: 80px; /* Място след логото */
+    }
+
+    .minecraft-logo {
+      font-family: 'Minecraft', sans-serif;
+      font-size: 5em;
+      color: #f6f6f6; /* Зелен цвят, типичен за Minecraft */
+      text-shadow: 3px 3px 0 #000, 6px 6px 0 #000;
+      letter-spacing: -0.05em; /* За по-дебел вид */
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-grow: 4; /* За да поеме останалото пространство */
+      justify-content: center; /* Центрира бутоните */
+      background: transparent;
+    }
+
+    nav a {
+  color: #f4f4f4;
+  margin: 0 10px; /* Adjust margin as needed */
+  text-decoration: none;
+  padding: 15px 30px; /* Adjust padding for height */
+  border-radius: 12px;
+  border: none; /* Remove border */
+  transition: color 0.3s, background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  font-size: 1.2em; /* Adjust font size as needed */
+  background: linear-gradient(90deg, #1a331a, #4a634a); /* Button background gradient */
+  flex-grow: 1; /* Make buttons expand to fill available space */
+  text-align: center; /* Center the text inside buttons */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+nav a:hover {
+  color: #003712;
+  background: linear-gradient(90deg, #7e857e, #1a331a); /* Reverse gradient on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+    .search-container {
+      display: flex;
+      justify-content: flex-end; /* Лентата за търсене отдясно */
+      margin-right: 80px;
+    }
+
+    .search-container input#search {
+      font-size: 1.2em;
+      background-color: #ffffff; /* Бял цвят */
+      color: #000000; /* Черен цвят */
+      border: 1px solid gray;
+      border-radius: 50px;
+      height: 40px;
+      width: 600px;
+      padding: 1px 20px;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
     <header>
-      <div class="logo-container">
-        <div class="logo">GIPHY</div>
+      <div class="header-content">
+        <div class="logo-container">
+          <div class="logo minecraft-logo">GIPHY</div>
+        </div>
+        <nav>
+          <a href="#" class="nav-link" data-page="trending" id="trending-link">Trending</a>
+          <a href="#" class="nav-link" data-page="favorites" id="favorites-link">Favorites</a>
+          <a href="#" class="nav-link" data-page="upload">Upload</a>
+          <a href="#" class="nav-link" data-page="about" id="about-link">About</a>
+        </nav>
+        <div class="search-container">
+          <input id="search" type="text" placeholder="Search">
+        </div>
       </div>
     </header>
-    <nav>
-      <a href="#" class="nav-link" data-page="trending" id="trending-link">Trending</a>
-      <a href="#" class="nav-link" data-page="favorites" id="favorites-link">Favorites</a>
-      <a href="#" class="nav-link" data-page="upload">Upload</a>
-      <a href="#" class="nav-link" data-page="about" id="about-link">About</a>
-    </nav>
-    <div class="search-container">
-      <input id="search" type="text" placeholder="Search">
-    </div>
     <div id="container" class="grid" id="gif-grid">
-      <!-- GIFs will be dynamically inserted here -->
+      <!-- GIFs ще бъдат динамично добавени тук -->
     </div>
     <footer>Footer</footer>
   </div>
