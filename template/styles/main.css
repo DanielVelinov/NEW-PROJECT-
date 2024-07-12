@@ -23,8 +23,6 @@
   transform-style: preserve-3d; /* Maintain 3D transformation for child elements */
 }
 
-
-
 @keyframes shine {
   0% {
     text-shadow: 2px 2px 0 #000, 4px 4px 0 #000, 6px 6px 0 #000;
@@ -38,74 +36,127 @@
 }
 
 /* Rest of your CSS */
-
-body {
-  background: #2f4a30; /* Dark green */
-  color: #e0f2f1; /* Very light cyan */
+ody {
+  margin: 0;
+  padding-top: 100px; /* Място за фиксирания хедър */
+  background: linear-gradient(90deg, #0f1e0f, #1a331a); /* Тъмно зелено към по-светло зелено */
   font-family: Arial, sans-serif;
+  color: #e0f2f1;
 }
 
 header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 200px;
-  background: #2f4a30; /* Dark green */
+  justify-content: space-between;
+  background: linear-gradient(90deg, #0f1e0f, #1a331a);
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-left: 80px;
+}
+
+.minecraft-logo {
+  font-family: 'Minecraft', sans-serif;
+  font-size: 5em;
+  color: #f6f6f6;
+  text-shadow: 3px 3px 0 #000, 6px 6px 0 #000;
+  letter-spacing: -0.05em;
+  font-weight: bold;
 }
 
 nav {
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: #2f4a30; /* Dark green */
-  padding: 10px;
+  justify-content: center;
+  flex-grow: 1;
+  background: transparent;
 }
 
 nav a {
-  color: #f4f4f4; /* Light teal */
-  margin: 0 20px;
+  color: #f4f4f4;
+  margin: 0 10px;
   text-decoration: none;
-  padding: 10px 40px;
-  border-radius: 10px;
-  border: 2px solid #b5b5b5; /* Light teal outline */
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: none;
   transition: color 0.3s, background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  font-size: 4em;
-  font-family: "Fantasy";
+  font-size: 1.2em;
+  background: linear-gradient(90deg, #1a331a, #4a634a);
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav a:hover {
-  color: #2f4a30; /* Dark green */
-  background-color: #2f4a30; /* Light teal */
-  transform: scale(1.2);
+  color: #003712;
+  background: linear-gradient(90deg, #7e857e, #1a331a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .search-container {
   display: flex;
-  justify-content: center;
-  padding: 15px;
+  justify-content: flex-end;
+  margin-right: 80px;
 }
 
 .search-container input#search {
-  font-size: 20px;
-  background-color: #ffffff; /* White */
-  color: #000000; /* Black */
+  font-size: 1.2em;
+  background-color: #ffffff;
+  color: #000000;
   border: 1px solid gray;
-  border-radius: 4px;
-  height: 30px;
-  width: 200px;
-  padding: 1px 15px;
+  border-radius: 50px;
+  height: 40px;
+  width: 600px;
+  padding: 1px 20px;
 }
 
-#container {
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#search-results {
   padding: 20px;
-  color: white;
+}
+
+#search-results h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gif {
+  width: 200px;
+  margin: 10px;
+}
+
+.gif img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 footer {
   text-align: center;
   padding: 10px;
   color: #ccc;
-  background: #2f4a30; /* Dark green */
+  background: #2f4a30;
 }
 
 .hidden {
@@ -228,4 +279,25 @@ span.favorite:hover {
   bottom: 10px;
   right: 10px;
   font-size: 24px;
+}
+
+/* Additional CSS for the GIF grid */
+#gif-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.gif-container {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+  margin: 10px;
+}
+
+.gif-container img {
+  display: block;
+  width: 100%;
+  height: auto;
 }

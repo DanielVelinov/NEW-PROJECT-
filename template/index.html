@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="./styles/main.css">
   <style>
     body {
-      margin: 100;
-      padding-top: 100px; /* Място за фиксирания хедър */
-      background: linear-gradient(90deg, #0f1e0f, #1a331a); /* Тъмно зелено към по-светло зелено */
+      margin: 0;
+      padding-top: 100px; /* Space for fixed header */
+      background: linear-gradient(90deg, #0f1e0f, #1a331a); /* Dark green to lighter green */
       font-family: Arial, sans-serif;
       color: #e0f2f1;
     }
@@ -21,7 +21,7 @@
       align-items: center;
       justify-content: space-between;
       background: linear-gradient(90deg, #0f1e0f, #1a331a);
-      padding: 10px 10px;
+      padding: 10px;
       position: fixed;
       width: 100%;
       top: 0;
@@ -32,58 +32,57 @@
       display: flex;
       align-items: center;
       margin-right: 15px;
-      margin-left: 80px; /* Място след логото */
+      margin-left: 80px;
     }
 
     .minecraft-logo {
       font-family: 'Minecraft', sans-serif;
       font-size: 5em;
-      color: #f6f6f6; /* Зелен цвят, типичен за Minecraft */
+      color: #f6f6f6;
       text-shadow: 3px 3px 0 #000, 6px 6px 0 #000;
-      letter-spacing: -0.05em; /* За по-дебел вид */
+      letter-spacing: -0.05em;
       font-weight: bold;
     }
 
     nav {
       display: flex;
       align-items: center;
-      flex-grow: 4; /* За да поеме останалото пространство */
-      justify-content: center; /* Центрира бутоните */
+      justify-content: center;
+      flex-grow: 1;
       background: transparent;
     }
 
     nav a {
-  color: #f4f4f4;
-  margin: 0 10px; /* Adjust margin as needed */
-  text-decoration: none;
-  padding: 15px 30px; /* Adjust padding for height */
-  border-radius: 12px;
-  border: none; /* Remove border */
-  transition: color 0.3s, background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  font-size: 1.2em; /* Adjust font size as needed */
-  background: linear-gradient(90deg, #1a331a, #4a634a); /* Button background gradient */
-  flex-grow: 1; /* Make buttons expand to fill available space */
-  text-align: center; /* Center the text inside buttons */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
-}
+      color: #f4f4f4;
+      margin: 0 10px;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 12px;
+      border: none;
+      transition: color 0.3s, background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      font-size: 1.2em;
+      background: linear-gradient(90deg, #1a331a, #4a634a);
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-nav a:hover {
-  color: #003712;
-  background: linear-gradient(90deg, #7e857e, #1a331a); /* Reverse gradient on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
-}
+    nav a:hover {
+      color: #003712;
+      background: linear-gradient(90deg, #7e857e, #1a331a);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
 
     .search-container {
       display: flex;
-      justify-content: flex-end; /* Лентата за търсене отдясно */
+      justify-content: flex-end;
       margin-right: 80px;
     }
 
     .search-container input#search {
       font-size: 1.2em;
-      background-color: #ffffff; /* Бял цвят */
-      color: #000000; /* Черен цвят */
+      background-color: #ffffff;
+      color: #000000;
       border: 1px solid gray;
       border-radius: 50px;
       height: 40px;
@@ -96,6 +95,33 @@ nav a:hover {
       align-items: center;
       justify-content: space-between;
       width: 100%;
+    }
+
+    /* Additional CSS for the GIF grid */
+    #gif-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .gif-container {
+      width: 200px;
+      margin: 10px;
+    }
+
+    .gif-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      color: #ccc;
+      background: #2f4a30;
     }
   </style>
 </head>
@@ -118,7 +144,7 @@ nav a:hover {
       </div>
     </header>
     <div id="container" class="grid" id="gif-grid">
-      <!-- GIFs ще бъдат динамично добавени тук -->
+      <!-- GIFs will be dynamically added here -->
     </div>
     <footer>Footer</footer>
   </div>
