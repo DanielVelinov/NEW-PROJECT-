@@ -6,6 +6,7 @@
 import { renderSearchItems } from "./events/search-events.js";
 import { fetchTrendingGIFs } from "./views/home-view.js";
 import { showFavorites } from "./views/favorites-view.js";
+import { toUploadView } from "./views/search-view.js";
 // document.addEventListener('DOMContentLoaded', () => {
 
 //   // add global listener
@@ -71,7 +72,7 @@ document.getElementById('gif-detailed-id').addEventListener('click', function (e
 
 document.getElementById('upload-link').addEventListener('click', function (event) {
     event.preventDefault();
-    showUploadSection();
+    toUploadView();
 });
 
 document.getElementById('upload-button').addEventListener('click', function (event) {
