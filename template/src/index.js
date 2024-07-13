@@ -61,3 +61,10 @@ document.getElementById('trending-link').addEventListener('click', function (eve
     event.preventDefault();
     fetchTrendingGIFs();
 });
+
+document.getElementById('gif-detailed-id').addEventListener('click', function (event) {
+    if (event.target.classList.contains('gif-detailed')) {
+
+        renderGif(event.target.getAttribute('data-gif'));
+    }
+})
