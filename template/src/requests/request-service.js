@@ -29,3 +29,10 @@ export const loadSearchGifs = async (searchTerm = '') => {
 
     return gifSearch;
 };
+
+const fetchGif = async (id = null) => {
+    const response = await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${apiKey}`);
+    const gifById = await response.json();
+
+    return gifById;
+};
