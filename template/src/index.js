@@ -67,4 +67,14 @@ document.getElementById('gif-detailed-id').addEventListener('click', function (e
 
         renderGif(event.target.getAttribute('data-gif'));
     }
-})
+});
+
+document.getElementById('upload-link').addEventListener('click', function (event) {
+    event.preventDefault();
+    showUploadSection();
+});
+
+document.getElementById('upload-button').addEventListener('click', function (event) {
+    event.preventDefault();
+    handleUpload();
+});
