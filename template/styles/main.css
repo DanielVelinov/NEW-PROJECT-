@@ -1,53 +1,11 @@
-/* Existing CSS */
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Center the logo container */
-  position: relative;
-  perspective: 1000px;
-  /* Add perspective for 3D effect */
-}
-
-.logo-image {
-  width: 100px;
-  /* Adjust as needed */
-  height: auto;
-  margin-right: 5px;
-  /* Space between image and text */
-}
-
-.logo {
-  font-family: 'Lobster', cursive;
-  font-size: 8em;
-  color: #e0f7fa;
-  /* Light cyan */
-  text-shadow: 2px 2px 0 #1c311f, 4px 4px 0 #1c311f, 6px 6px 0 #1c311f;
-  animation: move-3d 15s infinite alternate ease-in-out, shine 5s infinite;
-  transform-style: preserve-3d;
-  /* Maintain 3D transformation for child elements */
-}
-
-@keyframes shine {
-  0% {
-    text-shadow: 2px 2px 0 #000, 4px 4px 0 #000, 6px 6px 0 #000;
-  }
-
-  50% {
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8), 4px 4px 5px rgba(255, 255, 255, 0.8), 6px 6px 5px rgba(255, 255, 255, 0.8);
-  }
-
-  100% {
-    text-shadow: 2px 2px 0 #000, 4px 4px 0 #000, 6px 6px 0 #000;
-  }
-}
-
-/* Rest of your CSS */
-ody {
+body {
   margin: 0;
-  padding-top: 100px; /* Място за фиксирания хедър */
-  background: linear-gradient(90deg, #0f1e0f, #1a331a); /* Тъмно зелено към по-светло зелено */
+  padding-top: 100px; /* Space for fixed header */
+  background-image: url('../images/background.jpg'); /* Път към изображението */
+  background-size: cover; /* Изображението ще покрие цялата страница */
+  background-repeat: no-repeat; /* Изображението няма да се повтаря */
+  background-attachment: fixed; /* Фиксира изображението при скролване */
+  background-position: center center; /* Центриране на изображението */
   font-family: Arial, sans-serif;
   color: #e0f2f1;
 }
@@ -56,7 +14,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(90deg, #0f1e0f, #1a331a);
+  background: rgba(15, 30, 15, 0.8); /* Полупрозрачен тъмен фон */
   padding: 10px;
   position: fixed;
   width: 100%;
@@ -182,13 +140,11 @@ span.favorite {
 }
 
 span.favorite.active {
-  color: rgb(198, 0, 0);
-  /* Dark red */
+  color: rgb(198, 0, 0); /* Dark red */
 }
 
 span.favorite:hover {
-  color: rgb(76, 9, 9);
-  /* Darker red */
+  color: rgb(76, 9, 9); /* Darker red */
 }
 
 .flexbox {
@@ -207,41 +163,37 @@ span.favorite:hover {
 
 @keyframes favme-anime {
   0% {
-    opacity: 1;
-    font-size: 20px;
-    -webkit-text-stroke-color: transparent;
+      opacity: 1;
+      font-size: 20px;
+      -webkit-text-stroke-color: transparent;
   }
-
   25% {
-    opacity: .6;
-    color: #FFF;
-    font-size: 18px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #DC3232;
+      opacity: .6;
+      color: #FFF;
+      font-size: 18px;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #DC3232;
   }
-
   75% {
-    opacity: .6;
-    color: #FFF;
-    font-size: 24px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #DC3232;
+      opacity: .6;
+      color: #FFF;
+      font-size: 24px;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #DC3232;
   }
-
   100% {
-    opacity: 1;
-    font-size: 22px;
-    -webkit-text-stroke-color: transparent;
+      opacity: 1;
+      font-size: 22px;
+      -webkit-text-stroke-color: transparent;
   }
 }
 
 @keyframes favme-hover {
   from {
-    font-size: 24px;
+      font-size: 24px;
   }
-
   80% {
-    font-size: 22px;
+      font-size: 22px;
   }
 }
 
