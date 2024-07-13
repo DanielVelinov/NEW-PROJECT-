@@ -1,11 +1,17 @@
 body {
   margin: 0;
-  padding-top: 100px; /* Space for fixed header */
-  background-image: url('../images/background.jpg'); /* Път към изображението */
-  background-size: cover; /* Изображението ще покрие цялата страница */
-  background-repeat: no-repeat; /* Изображението няма да се повтаря */
-  background-attachment: fixed; /* Фиксира изображението при скролване */
-  background-position: center center; /* Центриране на изображението */
+  padding-top: 100px;
+  /* Space for fixed header */
+  background-image: url('../images/background.jpg');
+  /* Път към изображението */
+  background-size: cover;
+  /* Изображението ще покрие цялата страница */
+  background-repeat: no-repeat;
+  /* Изображението няма да се повтаря */
+  background-attachment: fixed;
+  /* Фиксира изображението при скролване */
+  background-position: center center;
+  /* Центриране на изображението */
   font-family: Arial, sans-serif;
   color: #e0f2f1;
 }
@@ -14,7 +20,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(15, 30, 15, 0.8); /* Полупрозрачен тъмен фон */
+  background: rgba(15, 30, 15, 0.8);
+  /* Полупрозрачен тъмен фон */
   padding: 10px;
   position: fixed;
   width: 100%;
@@ -140,11 +147,13 @@ span.favorite {
 }
 
 span.favorite.active {
-  color: rgb(198, 0, 0); /* Dark red */
+  color: rgb(198, 0, 0);
+  /* Dark red */
 }
 
 span.favorite:hover {
-  color: rgb(76, 9, 9); /* Darker red */
+  color: rgb(76, 9, 9);
+  /* Darker red */
 }
 
 .flexbox {
@@ -163,37 +172,41 @@ span.favorite:hover {
 
 @keyframes favme-anime {
   0% {
-      opacity: 1;
-      font-size: 20px;
-      -webkit-text-stroke-color: transparent;
+    opacity: 1;
+    font-size: 20px;
+    -webkit-text-stroke-color: transparent;
   }
+
   25% {
-      opacity: .6;
-      color: #FFF;
-      font-size: 18px;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: #DC3232;
+    opacity: .6;
+    color: #FFF;
+    font-size: 18px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #DC3232;
   }
+
   75% {
-      opacity: .6;
-      color: #FFF;
-      font-size: 24px;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: #DC3232;
+    opacity: .6;
+    color: #FFF;
+    font-size: 24px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #DC3232;
   }
+
   100% {
-      opacity: 1;
-      font-size: 22px;
-      -webkit-text-stroke-color: transparent;
+    opacity: 1;
+    font-size: 22px;
+    -webkit-text-stroke-color: transparent;
   }
 }
 
 @keyframes favme-hover {
   from {
-      font-size: 24px;
+    font-size: 24px;
   }
+
   80% {
-      font-size: 22px;
+    font-size: 22px;
   }
 }
 
@@ -253,7 +266,8 @@ span.favorite:hover {
 }
 
 .gif-container {
-  width: 200px; /* Adjust size as needed */
+  width: 200px;
+  /* Adjust size as needed */
   height: auto;
   margin: 10px;
 }
@@ -262,4 +276,14 @@ span.favorite:hover {
   display: block;
   width: 100%;
   height: auto;
+}
+
+#upload-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#upload-status {
+  margin-top: 10px;
+  color: red;
 }

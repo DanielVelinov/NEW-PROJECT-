@@ -1,5 +1,8 @@
+import { CONTAINER_SELECTOR } from "../common/constants.js";
+import { q } from "../events/helpers.js";
+
 export const toUploadView = () => {
-    document.querySelector(CONTAINER_SELECTOR).innerHTML = `
+    q(CONTAINER_SELECTOR).innerHTML = `
       <div id="upload-section">
         <h2>Upload a GIF</h2>
         <input type="file" id="gif-file" accept="image/gif">
