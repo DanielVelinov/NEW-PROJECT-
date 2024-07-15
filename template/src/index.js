@@ -66,12 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchTrendingGIFs();
     });
 
-    document.getElementById('gif-detailed-id').addEventListener('click', function (event) {
-        if (event.target.classList.contains('gif-detailed')) {
+    // document.getElementById('gif-detailed-id').addEventListener('click', function (event) {
+    //     if (event.target.classList.contains('gif-detailed')) {
 
-            renderGif(event.target.getAttribute('data-gif'));
-        }
-    });
+    //         renderGif(event.target.getAttribute('data-gif'));
+    //     }
+    // });
 
     document.getElementById('upload-link').addEventListener('click', function (event) {
         event.preventDefault();
