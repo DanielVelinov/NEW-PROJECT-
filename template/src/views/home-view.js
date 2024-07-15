@@ -1,5 +1,5 @@
 import { apiKey } from "../common/constants.js";
-import { toggleFavoriteStatus, renderFavoriteStatus } from "../events/favorites-events.js";
+import { toggleFavoriteStatus } from "../events/favorites-events.js";
 
 export async function fetchGIFs(url, containerId) {
     try {

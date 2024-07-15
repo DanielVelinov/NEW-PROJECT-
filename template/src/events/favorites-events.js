@@ -1,29 +1,39 @@
-import { EMPTY_HEART, FULL_HEART } from '../common/constants.js';
-import {
-    addFavorite,
-    getFavorites,
-    removeFavorite,
-} from '../data/favorites.js';
-import { q } from './helpers.js';
+import { addFavorite, getFavorites, removeFavorite } from '../data/favorites.js';
+import { loadSingleGif } from '../requests/request-service.js';
+import { renderFavorites } from './navigation-events.js';
+import { FULL_HEART, EMPTY_HEART } from '../common/constants.js';
 
 export const toggleFavoriteStatus = async (gifId) => {
-    const favorites = await getFavorites();
-    const heartSpan = q(`span[data-gif-id="${gifId}"]`);
-
-    if (favorites.includes(gifId)) {
-        await removeFavorite(gifId);
-        heartSpan.classList.remove('active');
-        heartSpan.innerHTML = EMPTY_HEART;
-    } else {
-        await addFavorite(gifId);
-        heartSpan.classList.add('active');
-        heartSpan.innerHTML = FULL_HEART;
+    if (!gifId) {
+        console.error('Invalid GIF ID:', gifId);
+        return;
     }
-};
 
-export const renderFavoriteStatus = async (gifId) => {
-    const favorites = await getFavorites();
-    return favorites.includes(gifId)
-        ? `<span class="favorite active" data-gif-id="${gifId}">${FULL_HEART}</span>`
-        : `<span class="favorite" data-gif-id="${gifId}">${EMPTY_HEART}</span>`;
+    let favorites = getFavorites();
+    const button = document.querySelector(`[data-gif-id="${gifId}"]`);
+
+    if (favorites.find(fav => fav.id === gifId)) {
+        removeFavorite(gifId);
+        if (button) {
+            button.innerHTML = EMPTY_HEART;
+            button.classList.remove('remove-from-favorites');
+            button.classList.add('add-to-favorites');
+        }
+        const favoritesNavLink = document.querySelector('a.nav-link[data-page="favorites"]');
+        if (favoritesNavLink && favoritesNavLink.classList.contains('active')) {
+            renderFavorites();
+        }
+    } else {
+        const gif = await loadSingleGif(gifId);
+        if (gif && gif.images && gif.images.downsized_medium && gif.images.downsized_medium.url) {
+            addFavorite(gif);
+            if (button) {
+                button.innerHTML = FULL_HEART;
+                button.classList.remove('add-to-favorites');
+                button.classList.add('remove-from-favorites');
+            }
+        } else {
+            console.error('Invalid GIF object:', gif);
+        }
+    }
 };

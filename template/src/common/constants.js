@@ -6,10 +6,12 @@ export const FAVORITES = 'favorites';
 
 export const ABOUT = 'about';
 
+export const UPLOAD = 'upload';
+
 export const CONTAINER_SELECTOR = '#container';
 
 export const FULL_HEART = '❤';
 
 export const EMPTY_HEART = '♡';
 
-export const apiKey = 'JzWwBP36b6TqD9YuJ01GmA0KcZyNDUZP';
+export const apiKey = 'BDusWBGaxDjzCXuaGFXMXc3lAZz9OSGX';

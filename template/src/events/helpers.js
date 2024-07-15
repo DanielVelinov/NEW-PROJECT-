@@ -1,26 +1,20 @@
-/**
- * Shorthand for document.querySelector
- * @param {string} selector 
- * @returns {Element}
- */
+// src/events/helpers.js
+import { getFavorites } from '../data/favorites.js';
+import { FULL_HEART, EMPTY_HEART } from '../common/constants.js';
+
 export const q = (selector) => document.querySelector(selector);
 
-/**
- * Shorthand for document.querySelectorAll
- * @param {string} selector 
- * @returns {NodeLists<Element>}
- */
-export const qs = (selector) => document.querySelectorAll(selector);
-
 export const setActiveNav = (page) => {
-  const navs = qs('a.nav-link');
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('data-page') === page) {
+      link.classList.add('active');
+    }
+  });
+};
 
-  Array
-    .from(navs)
-    .forEach(element => element
-      .getAttribute('data-page') === page
-      ? element.classList.add('active')
-      : element.classList.remove('active')
-    );
+export const renderFavoriteStatus = (gifId) => {
+  const favorites = getFavorites();
+  return favorites.find(fav => fav.id === gifId) ? FULL_HEART : EMPTY_HEART;
 };
 

@@ -36,14 +36,6 @@ header {
   margin-left: 80px;
 }
 
-.minecraft-logo {
-  font-family: 'Minecraft', sans-serif;
-  font-size: 5em;
-  color: #f6f6f6;
-  text-shadow: 3px 3px 0 #000, 6px 6px 0 #000;
-  letter-spacing: -0.05em;
-  font-weight: bold;
-}
 
 nav {
   display: flex;

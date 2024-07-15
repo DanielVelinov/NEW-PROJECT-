@@ -1,28 +1,44 @@
-import { getFavorites } from "../data/favorites.js";
-import { renderFavoriteStatus, toggleFavoriteStatus } from "../events/favorites-events.js";
+import { FULL_HEART, EMPTY_HEART } from "../common/constants.js";
+import { renderFavoriteStatus } from "../events/helpers.js";
 
-export async function showFavorites() {
-    const favorites = getFavorites();
-    const container = document.getElementById('container');
-    container.innerHTML = '';
-
+export const toFavoritesView = (favorites) => {
     if (favorites.length === 0) {
-        container.innerHTML = '<p>No favorites yet. Add some GIFs to favorites to see them here.</p>';
-        return;
-    }
-
-    favorites.forEach(gif => {
-        const gifDiv = document.createElement('div');
-        gifDiv.classList.add('gif');
-        gifDiv.innerHTML = `
-    <img src="${gif.images.fixed_height.url}" alt="${gif.title}">
-    ${renderFavoriteStatus(gif)}
+        return ' <h1>No favorites yet</h1>';
+    } else {
+        return `
+      <h1></h1>
+      <div class="trending">
+        ${favorites.map(gif => `
+          <div class="grid-item">
+            <div class="gif-container">
+              <img src="${gif.images?.downsized_medium.url}" alt="${gif.title}">
+              <div class="overlay"></div>
+              <div class="buttons">
+                <button class="view-trending-btn" data-trending-id="${gif.id}">View info</button>
+                <button class="remove-from-favorites" data-gif-id="${gif.id}">${FULL_HEART}</button>
+              </div>
+            </div>
+          </div>
+        `).join('\n')}
+      </div>
     `;
-        container.appendChild(gifDiv);
+    }
+};
 
-        gifDiv.querySelector('.favorite').addEventListener('click', () => {
-            toggleFavoriteStatus(gif);
-            showFavorites(); // Refresh the favorites view after removing a favorite
-        });
-    });
-}
+export const toRandomGifsView = (gifs) => `
+  <div id="random-gifs" align="center">
+    ${gifs.map(gif => `
+      <div class="grid-item">
+        <div class="gif-container">
+          <img src="${gif.images.downsized_medium.url}" alt="${gif.title}">
+          <div class="overlay"></div>
+          <div class="buttons">
+            <button class="view-trending-btn" data-trending-id="${gif.id}">View info</button>
+            <button class="${renderFavoriteStatus(gif.id) === FULL_HEART ? 'remove-from-favorites' : 'add-to-favorites'}" data-gif-id="${gif.id}">${renderFavoriteStatus(gif.id)}</button>
+          </div>
+        </div>
+        <h2>Could it be your first favorite GIF?</h2>
+      </div>
+    `).join('\n')}
+  </div>
+`;

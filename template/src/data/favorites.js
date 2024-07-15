@@ -1,17 +1,17 @@
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-export const addFavorite = async (gifId) => {
-    if (favorites.find(id => id === gifId)) {
+export const addFavorite = (gif) => {
+    if (favorites.find(fav => fav.id === gif.id)) {
         return;
     }
 
-    favorites.push(gifId);
+    favorites.push(gif);
     localStorage.setItem('favorites', JSON.stringify(favorites));
 };
 
-export const removeFavorite = async (gifId) => {
-    favorites = favorites.filter(id => id !== gifId);
+export const removeFavorite = (gifId) => {
+    favorites = favorites.filter(fav => fav.id !== gifId);
     localStorage.setItem('favorites', JSON.stringify(favorites));
 };
 
-export const getFavorites = async () => [...favorites];
+export const getFavorites = () => [...favorites];

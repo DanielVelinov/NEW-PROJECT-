@@ -1,89 +1,57 @@
-// import { TRENDING } from './common/constants.js';
-// import { toggleFavoriteStatus } from './events/favorites-events.js';
-// import { q } from './events/helpers.js';
-// import { loadPage, renderCategory, renderMovieDetails } from './events/navigation-events.js';
-// import { renderSearchItems } from './events/search-events.js';
-import { renderSearchItems } from "./events/search-events.js";
-import { fetchTrendingGIFs } from "./views/home-view.js";
-import { showFavorites } from "./views/favorites-view.js";
-import { toUploadView } from "./views/search-view.js";
-import { toAboutView } from "./views/about-view.js";
-// document.addEventListener('DOMContentLoaded', () => {
+import { TRENDING, FAVORITES, ABOUT, UPLOAD } from './common/constants.js';
+import { toggleFavoriteStatus } from './events/favorites-events.js';
+import { q } from './events/helpers.js'; 
+import { loadPage, renderTrending } from './events/navigation-events.js';
+import { renderSearchItems } from './events/search-events.js';
+import { handleUpload } from './events/upload-events.js';
+import { loadSingleGif } from './requests/request-service.js';
+import { toGifDetailedView } from './views/gif-views.js';
 
-//   // add global listener
-//   document.addEventListener('click', event => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // add global listener
+    document.addEventListener('click', async e => {
+        // nav events
+        if (e.target.classList.contains('nav-link')) {
+            loadPage(e.target.getAttribute('data-page'));
+        }
 
-//     // nav events
-//     if (event.target.classList.contains('nav-link')) {
+        // show GIF details
+        if (e.target.classList.contains('view-trending-btn')) {
+            const gifId = e.target.getAttribute('data-trending-id');
+            const gif = await loadSingleGif(gifId);
 
-//       loadPage(event.target.getAttribute('data-page'));
-//     }
+            // Create an overlay
+            const overlay = document.createElement('div');
+            overlay.id = 'gif-overlay';
+            overlay.innerHTML = toGifDetailedView(gif);
+            document.body.appendChild(overlay);
 
-//     // show category events
-//     if (event.target.classList.contains(/* your button class here */)) {
-//       renderCategory(+event.target.getAttribute(/* your correct data attribute here */));
-//     }
+            // Add event listener to the close button
+            document.getElementById('close-gif-info').addEventListener('click', () => {
+                overlay.remove();
+            });
+        }
 
-//     // show gif events
-//     if (event.target.classList.contains(/* your button class here */)) {
-//       renderGifDetails(+event.target.getAttribute(/* your correct data attribute here */));
-//     }
+        // toggle favorite event
+        if (e.target.classList.contains('add-to-favorites') || e.target.classList.contains('remove-from-favorites')) {
+            const gifId = e.target.getAttribute('data-gif-id');
+            if (gifId) {
+                await toggleFavoriteStatus(gifId);
+            } else {
+                console.error('GIF ID is undefined:', e.target);
+            }
+        }
 
-//     // toggle favorite event
-//     if (event.target.classList.contains(/* favorites item class here */)) {
-//       toggleFavoriteStatus(+event.target.getAttribute(/* your correct data attribute here */));
-//     }
-
-//   });
-
-//   // search events
-//   q('input#search').addEventListener('input', event => {
-//     renderSearchItems(event.target.value);
-//   });
-
-//   loadPage(TRENDING);
-
-// });
-
-// TODO
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('search').addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-            const searchTerm = event.target.value.trim();
-            renderSearchItems(searchTerm);
+        // upload events
+        if (e.target.id === 'upload-button') {
+            handleUpload();
         }
     });
 
-    document.getElementById('favorites-link').addEventListener('click', function (event) {
-        event.preventDefault();
-        showFavorites();
+    // search events
+    q('input#search').addEventListener('input', e => {
+        renderSearchItems(e.target.value);
     });
 
-    document.getElementById('trending-link').addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log('Trending clicked')
-        fetchTrendingGIFs();
-    });
-
-    document.getElementById('gif-detailed-id').addEventListener('click', function (event) {
-        if (event.target.classList.contains('gif-detailed')) {
-
-            renderGif(event.target.getAttribute('data-gif'));
-        }
-    });
-
-    document.getElementById('upload-link').addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log('Upload link clicked');
-        toUploadView();
-    });
-
-
-
-    document.getElementById('about-link').addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log('About link clicked');
-        toAboutView();
-    });
+    loadPage(TRENDING);  // Default to trending page
 });
