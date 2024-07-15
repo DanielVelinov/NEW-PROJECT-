@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         }
 
+
         // toggle favorite event
         if (e.target.classList.contains('add-to-favorites') || e.target.classList.contains('remove-from-favorites')) {
             const gifId = e.target.getAttribute('data-gif-id');
@@ -47,6 +48,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             handleUpload();
         }
     });
+
+    // document.getElementById('gif-detailed-id').addEventListener('click', function (event) {
+    //     if (event.target.classList.contains('gif-detailed')) {
+
+    //         renderGif(event.target.getAttribute('data-gif'));
+    //     }
+    // });
+
 
     // search events
     q('input#search').addEventListener('input', e => {
