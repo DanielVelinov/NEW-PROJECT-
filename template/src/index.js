@@ -1,6 +1,6 @@
 import { TRENDING, FAVORITES, ABOUT, UPLOAD } from './common/constants.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
-import { q } from './events/helpers.js'; 
+import { q } from './events/helpers.js';
 import { loadPage, renderTrending } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 import { handleUpload } from './events/upload-events.js';
@@ -58,9 +58,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
     // search events
-    q('input#search').addEventListener('input', e => {
-        renderSearchItems(e.target.value);
-    });
+    // q('input#search').addEventListener('input', e => {
+    //     renderSearchItems(e.target.value);
+    // });
 
     loadPage(TRENDING);  // Default to trending page
+});
+
+document.getElementById('search').addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        const searchTerm = event.target.value.trim();
+        renderSearchItems(searchTerm);
+    }
 });
