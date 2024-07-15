@@ -36,6 +36,17 @@ header {
   margin-left: 80px;
 }
 
+.logo {
+  font-size: 3em; /* Регулирайте размера по ваше желание */
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(80deg, #004d00, #eaeaea); /* Преливане от тъмно зелено към светло зелено */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
 
 nav {
   display: flex;
