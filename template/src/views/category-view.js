@@ -1,4 +1,8 @@
-export const toCategoriesView = (categories) => `
+import { CONTAINER_SELECTOR } from "../common/constants";
+import { q } from "../events/helpers";
+
+export const toCategoriesView = (categories) => {
+    q(CONTAINER_SELECTOR).innerHTML = `
     <div id="categories">
         <h1>Categories</h1>
         <div class="content">
@@ -11,3 +15,4 @@ export const toCategoriesView = (categories) => `
         </div>
     </div>
 `;
+}
