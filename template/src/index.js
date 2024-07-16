@@ -83,3 +83,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     displayUploadedGifs();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const viewButtons = document.querySelectorAll('.view-trending-btn');
+    viewButtons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            const gifId = button.getAttribute('data-trending-id');
+            const gifInfoDiv = document.getElementById(`gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'block';
+        });
+
+        button.addEventListener('mouseout', () => {
+            const gifId = button.getAttribute('data-trending-id');
+            const gifInfoDiv = document.getElementById(`gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'none';
+        });
+    });
+});

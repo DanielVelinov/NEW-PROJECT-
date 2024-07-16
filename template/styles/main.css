@@ -241,7 +241,21 @@ span.favorite:hover {
 }
 
 .gif-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   padding: 10px;
+  display: none;
+  /* Initially hidden */
+  z-index: 1000;
+}
+
+.view-trending-btn:hover+.gif-info {
+  display: block;
+  /* Display when hovering over .view-trending-btn */
 }
 
 .fav-btn {
