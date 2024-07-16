@@ -462,3 +462,13 @@ span.favorite:hover {
   /* Тъмен текст при задържане */
   transform: translateY(-2px);
 }
+
+#random-gifs {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  /* Full height minus header height */
+}
