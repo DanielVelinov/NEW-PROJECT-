@@ -279,6 +279,26 @@ span.favorite:hover {
   /* Display when hovering over .view-favorites-btn */
 }
 
+.view-search-btn {
+  background: #2e2e2e;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 10px 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.view-search-btn:hover+.gif-info {
+  display: block;
+  /* Display when hovering over .view-search-btn */
+}
+
 .fav-btn {
   position: absolute;
   bottom: 10px;

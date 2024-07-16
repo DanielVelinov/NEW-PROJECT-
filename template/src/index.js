@@ -117,3 +117,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const viewButtons = document.querySelectorAll('.view-search-btn');
+    viewButtons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            const gifId = button.getAttribute('data-search-id');
+            const gifInfoDiv = document.getElementById(`search-gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'block';
+        });
+
+        button.addEventListener('mouseout', () => {
+            const gifId = button.getAttribute('data-search-id');
+            const gifInfoDiv = document.getElementById(`search-gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'none';
+        });
+    });
+});
