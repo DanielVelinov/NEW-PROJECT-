@@ -100,3 +100,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const viewButtons = document.querySelectorAll('.view-favorites-btn');
+    viewButtons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            const gifId = button.getAttribute('data-favorites-id');
+            const gifInfoDiv = document.getElementById(`favorites-gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'block';
+        });
+
+        button.addEventListener('mouseout', () => {
+            const gifId = button.getAttribute('data-favorites-id');
+            const gifInfoDiv = document.getElementById(`favorites-gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'none';
+        });
+    });
+});
