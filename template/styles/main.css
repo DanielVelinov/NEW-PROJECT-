@@ -111,22 +111,28 @@ nav a:hover {
 }
 
 .content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  column-count: 5;
+  column-gap: 5px;
 }
 
 .gif {
-  width: 200px;
-  margin: 10px;
+  display: inline-block;
+  margin: 0;
+  width: 100%;
 }
 
-.gif img {
+.separate-gifs {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.separate-gifs img {
   display: block;
   width: 100%;
   height: auto;
 }
+
 
 footer {
   text-align: center;
@@ -289,4 +295,9 @@ span.favorite:hover {
 #upload-status {
   margin-top: 10px;
   color: red;
+}
+.grid-item {
+  display: inline-block;
+  margin: 0;
+  width: 100%;
 }

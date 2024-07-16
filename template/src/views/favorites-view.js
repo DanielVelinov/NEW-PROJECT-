@@ -7,15 +7,17 @@ export const toFavoritesView = (favorites) => {
     } else {
         return `
       <h1></h1>
-      <div class="trending">
+      <div id="trending">
         ${favorites.map(gif => `
-          <div class="grid-item">
-            <div class="gif-container">
+          <div class="content">
+          <div class="gif">
+            <div class="separate-gifs">
               <img src="${gif.images?.downsized_medium.url}" alt="${gif.title}">
               <div class="overlay"></div>
               <div class="buttons">
                 <button class="view-trending-btn" data-trending-id="${gif.id}">View info</button>
                 <button class="remove-from-favorites" data-gif-id="${gif.id}">${FULL_HEART}</button>
+              </div>
               </div>
             </div>
           </div>
