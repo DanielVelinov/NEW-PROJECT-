@@ -14,7 +14,12 @@ header {
   align-items: center;
   justify-content: space-between;
   background: rgba(46, 46, 46, 0.8);
+<<<<<<< HEAD
   padding: 30px;
+=======
+  /* Прозрачен тъмен фон */
+  padding: 15px;
+>>>>>>> 6f0a2db2fa91a742d857c1543251e532334fcd09
   position: fixed;
   width: 100%;
   top: 0;
