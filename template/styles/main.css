@@ -3,17 +3,16 @@
 body {
   margin: 0;
   padding-top: 100px;
-  background: url('../images/wow-background.jpg') no-repeat center center fixed;
+  background: url('../images/background.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Uncial Antiqua', cursive; /* Старинен шрифт */
   color: #2e2e2e; /* Ярко бял цвят за текст */
 }
-
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #2e2e2e; /* Тъмен фон */
+  background: rgba(46, 46, 46, 0.8); /* Прозрачен тъмен фон */
   padding: 30px;
   position: fixed;
   width: 100%;
@@ -247,6 +246,7 @@ span.favorite:hover {
 }
 
 #gif-grid {
+
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
