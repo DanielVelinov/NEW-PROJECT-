@@ -281,11 +281,93 @@ span.favorite:hover {
   height: calc(100vh - 130px);
   justify-content: center;
 }
+/* Скриване на оригиналния бутон за избор на файл */
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
+}
+
+.drop-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed #555;
+  color: #444;
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover {
+  background: #eee;
+  border-color: #111;
+}
+
+.drop-container:hover .drop-title {
+  color: #222;
+}
+
+.drop-title {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color .2s ease-in-out;
+}
+
+/* Стил за новия персонализиран бутон */
+.file {
+  background: #2e2e2e;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 10px 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.file :hover {
+  background: #d4af37;
+  color: #2e2e2e;
+  transform: translateY(-2px);
+}
+
+
+#upload-section h1, #upload-section button {
+  font-size: 3em; /* Увеличава размера на текста и бутоните */
+}
+
+#upload-section button {
+  padding: 10px 20px; /* Увеличава размера на бутоните */
+  font-size: 2em; /* Увеличава размера на текста в бутоните */
+}
 
 #upload-status {
   margin-top: 10px;
   color: red;
+  font-size: 1.2em; /* Увеличава размера на текста за съобщението за статус */
 }
+
 
 .grid-item {
   display: inline-block;
@@ -433,26 +515,7 @@ span.favorite:hover {
 
 }
 
-.file-upload-button {
-  background: #2e2e2e;
-  color: #d4af37;
-  border: 2px solid #d4af37;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1em;
-  margin: 10px 5px;
-  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  border-radius: 4px;
-}
 
-.file-upload-button:hover {
-  background: #d4af37;
-  color: #2e2e2e;
-  transform: translateY(-2px);
-}
 
 .upload-button {
   background: #2e2e2e;
