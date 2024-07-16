@@ -1,5 +1,5 @@
 import { uploadGif } from "../requests/request-service.js";
-
+import { apiKey } from "../common/constants.js";
 
 export const handleUpload = async () => {
     const fileInput = document.getElementById('gif-file');
@@ -12,6 +12,7 @@ export const handleUpload = async () => {
 
     const formData = new FormData();
     formData.append('file', fileInput.files[0]);
+    formData.append('api_key', apiKey);
 
     try {
         const response = await uploadGif(formData);
