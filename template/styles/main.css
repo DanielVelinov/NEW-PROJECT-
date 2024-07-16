@@ -14,7 +14,6 @@ header {
   align-items: center;
   justify-content: space-between;
   background: rgba(46, 46, 46, 0.8);
-
   padding: 30px;
   padding: 15px;
   position: fixed;
@@ -126,7 +125,7 @@ footer {
   color: #d4af37;
   background: #2e2e2e;
   border-top: 4px solid #d4af37;
-  
+
 }
 
 .hidden {
@@ -414,12 +413,12 @@ span.favorite:hover {
   transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
   border-radius: 4px;
-  
+
 }
 
 .add-to-favorites:hover {
   background: #d4af37;
-  
+
   color: #2e2e2e;
   transform: translateY(-2px);
 }
@@ -431,12 +430,13 @@ span.favorite:hover {
   align-items: center;
   justify-content: center;
   height: calc(100vh - 100px);
-  
+
 }
+
 .file-upload-button {
-  background: #2e2e2e; 
-  color: #d4af37; 
-  border: 2px solid #d4af37; 
+  background: #2e2e2e;
+  color: #d4af37;
+  border: 2px solid #d4af37;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -445,19 +445,19 @@ span.favorite:hover {
   margin: 10px 5px;
   transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  border-radius: 4px; 
+  border-radius: 4px;
 }
 
 .file-upload-button:hover {
-  background: #d4af37; 
+  background: #d4af37;
   color: #2e2e2e;
   transform: translateY(-2px);
 }
 
 .upload-button {
-  background: #2e2e2e; 
-  color: #d4af37; 
-  border: 2px solid #d4af37; 
+  background: #2e2e2e;
+  color: #d4af37;
+  border: 2px solid #d4af37;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -466,62 +466,64 @@ span.favorite:hover {
   margin: 10px 5px;
   transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  border-radius: 4px; 
+  border-radius: 4px;
 }
 
 .upload-button:hover {
-  background: #d4af37; 
-  color: #2e2e2e; 
+  background: #d4af37;
+  color: #2e2e2e;
   transform: translateY(-2px);
 }
 
 #about {
-  background: rgba(46, 46, 46, 0.8); 
-  color: #d4af37; 
+  background: rgba(46, 46, 46, 0.8);
+  color: #d4af37;
   padding: 30px;
-  margin-top: 100px; 
-  border-bottom: 4px solid #d4af37; 
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5); 
+  margin-top: 100px;
+  border-bottom: 4px solid #d4af37;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 #about .content {
-  max-width: 800px; 
-  margin: 0 auto; 
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 #about h1 {
-  font-size: 4em; 
+  font-size: 4em;
   margin-bottom: 20px;
-  text-shadow: 4px 1px 0 #000; 
+  text-shadow: 4px 1px 0 #000;
 }
 
 
 #about h2 {
-  font-size: 2em; 
+  font-size: 2em;
   margin-bottom: 10px;
-  text-shadow: 4px 1px 0 #000; 
+  text-shadow: 4px 1px 0 #000;
 }
-#about h3{
+
+#about h3 {
   font-size: 40px;
   text-shadow: 4px 1px 0 #000;
 }
+
 #about ul {
   font-size: 2em;
-  list-style-type: none; 
+  list-style-type: none;
   padding-left: 0;
   margin: 8px;
 }
 
 #about ul li {
-  font-size: 1em; 
+  font-size: 1em;
   margin-bottom: 5px;
   text-shadow: 4px 1px 0 #000;
 }
 
 #about a {
-  color: #d4af37; 
+  color: #d4af37;
   text-decoration: none;
-  text-shadow: 4px 1px 0 #000; 
+  text-shadow: 4px 1px 0 #000;
 }
 
 #about a:hover {
