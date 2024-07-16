@@ -281,6 +281,7 @@ span.favorite:hover {
   height: calc(100vh - 130px);
   justify-content: center;
 }
+
 /* Скриване на оригиналния бутон за избор на файл */
 input[type=file]::file-selector-button {
   margin-right: 20px;
@@ -353,19 +354,24 @@ input[type=file]::file-selector-button:hover {
 }
 
 
-#upload-section h1, #upload-section button {
-  font-size: 3em; /* Увеличава размера на текста и бутоните */
+#upload-section h1,
+#upload-section button {
+  font-size: 3em;
+  /* Увеличава размера на текста и бутоните */
 }
 
 #upload-section button {
-  padding: 10px 20px; /* Увеличава размера на бутоните */
-  font-size: 2em; /* Увеличава размера на текста в бутоните */
+  padding: 10px 20px;
+  /* Увеличава размера на бутоните */
+  font-size: 2em;
+  /* Увеличава размера на текста в бутоните */
 }
 
 #upload-status {
   margin-top: 10px;
   color: red;
-  font-size: 1.2em; /* Увеличава размера на текста за съобщението за статус */
+  font-size: 1.2em;
+  /* Увеличава размера на текста за съобщението за статус */
 }
 
 
@@ -591,4 +597,30 @@ input[type=file]::file-selector-button:hover {
 
 #about a:hover {
   text-decoration: underline;
+}
+
+#uploaded-gifs-section {
+  padding: 20px;
+  text-align: center;
+}
+
+#uploaded-gifs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.uploaded-gif {
+  border: 2px solid #d4af37;
+  margin: 10px;
+}
+
+#upload-section {
+  /* Maintain existing styles */
+  /* Example styles to allow scrolling */
+  max-height: calc(100vh - 150px);
+  /* Adjust as needed */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
 }

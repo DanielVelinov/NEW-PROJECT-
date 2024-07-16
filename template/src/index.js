@@ -6,6 +6,8 @@ import { renderSearchItems } from './events/search-events.js';
 import { handleUpload } from './events/upload-events.js';
 import { loadSingleGif } from './requests/request-service.js';
 import { toGifDetailedView } from './views/gif-views.js';
+import { displayUploadedGifs } from './requests/request-service.js';
+
 
 document.addEventListener('DOMContentLoaded', async () => {
     // add global listener
@@ -70,4 +72,14 @@ document.getElementById('search').addEventListener('keypress', function (event) 
         const searchTerm = event.target.value.trim();
         renderSearchItems(searchTerm);
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const uploadButton = document.getElementById('upload-button');
+
+    if (uploadButton) {
+        uploadButton.addEventListener('click', handleUpload);
+    }
+
+    displayUploadedGifs();
 });

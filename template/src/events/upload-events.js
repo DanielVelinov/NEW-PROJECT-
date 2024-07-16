@@ -1,5 +1,6 @@
 import { uploadGif } from "../requests/request-service.js";
 import { apiKey } from "../common/constants.js";
+import { displayUploadedGifs } from "../requests/request-service.js";
 
 export const handleUpload = async () => {
     const fileInput = document.getElementById('gif-file');
@@ -16,8 +17,20 @@ export const handleUpload = async () => {
 
     try {
         const response = await uploadGif(formData);
-        status.textContent = response.data ? 'Upload successful!' : 'Upload failed!';
+        if (response && response.data) {
+            status.textContent = 'Upload successful!';
+            saveUploadedGifId(response.data.id);
+            displayUploadedGifs();
+        } else {
+            status.textContent = 'Upload failed!';
+        }
     } catch (error) {
         status.textContent = `Error: ${error.message}`;
     }
+};
+
+export const saveUploadedGifId = (id) => {
+    const uploadedGifs = JSON.parse(localStorage.getItem('uploadedGifs')) || [];
+    uploadedGifs.push(id);
+    localStorage.setItem('uploadedGifs', JSON.stringify(uploadedGifs));
 };
