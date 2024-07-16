@@ -8,6 +8,7 @@ body {
   font-family: 'Uncial Antiqua', cursive; /* Старинен шрифт */
   color: #2e2e2e; /* Ярко бял цвят за текст */
 }
+
 header {
   display: flex;
   align-items: center;
@@ -246,7 +247,6 @@ span.favorite:hover {
 }
 
 #gif-grid {
-
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -270,6 +270,9 @@ span.favorite:hover {
 #upload-section {
   text-align: center;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #upload-status {
@@ -281,4 +284,116 @@ span.favorite:hover {
   display: inline-block;
   margin: 0;
   width: 100%;
+}
+
+#about-section {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* височината на секцията, така че съдържанието да е вертикално центрирано */
+}
+
+/* Нови стилове за бутоните */
+.button {
+  background: #2e2e2e; /* Тъмен фон */
+  color: #d4af37; /* Златен текст */
+  border: 2px solid #d4af37; /* Златен бордюр */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 10px 5px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #d4af37; /* Златен фон при задържане */
+  color: #2e2e2e; /* Тъмен текст при задържане */
+}
+
+/* Стилове за бутоните в gif контейнера */
+.gif-container .fav-btn, .gif-container .view-info {
+  background: #2e2e2e; /* Тъмен фон */
+  color: #d4af37; /* Златен текст */
+  border: 2px solid #d4af37; /* Златен бордюр */
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9em;
+  margin: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  border-radius: 4px; /* Леко заоблени ъгли */
+}
+
+.gif-container .fav-btn:hover, .gif-container .view-info:hover {
+  background: #d4af37; /* Златен фон при задържане */
+  color: #2e2e2e; /* Тъмен текст при задържане */
+}
+.view-trending-btn {
+  background: #2e2e2e; /* Тъмен фон */
+  color: #d4af37; /* Златен текст */
+  border: 2px solid #d4af37; /* Златен бордюр */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 10px 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border-radius: 4px; /* Леко заоблени ъгли */
+}
+
+.view-trending-btn:hover {
+  background: #d4af37; /* Златен фон при задържане */
+  color: #2e2e2e; /* Тъмен текст при задържане */
+  transform: translateY(-2px);
+}
+.remove-from-favorites {
+  background: #2e2e2e; /* Тъмен фон */
+  color: #d4af37; /* Златен текст */
+  border: 2px solid #d4af37; /* Златен бордюр */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 10px 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border-radius: 4px; /* Леко заоблени ъгли */
+}
+
+.remove-from-favorites:hover {
+  background: #d4af37; /* Златен фон при задържане */
+  color: #2e2e2e; /* Тъмен текст при задържане */
+  transform: translateY(-2px);
+}
+
+.add-to-favorites {
+  background: #2e2e2e; /* Тъмен фон */
+  color: #d4af37; /* Златен текст */
+  border: 2px solid #d4af37; /* Златен бордюр */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 10px 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border-radius: 4px; /* Леко заоблени ъгли */
+}
+
+.add-to-favorites:hover {
+  background: #d4af37; /* Златен фон при задържане */
+  color: #2e2e2e; /* Тъмен текст при задържане */
+  transform: translateY(-2px);
 }
