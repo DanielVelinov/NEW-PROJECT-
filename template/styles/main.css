@@ -281,7 +281,7 @@ span.favorite:hover {
   height: calc(100vh - 130px);
   justify-content: center;
 }
-/* Скриване на оригиналния бутон за избор на файл */
+
 input[type=file]::file-selector-button {
   margin-right: 20px;
   border: none;
@@ -314,9 +314,10 @@ input[type=file]::file-selector-button:hover {
 }
 
 .drop-container:hover {
-  background: #eee;
+  background: linear-gradient(to right, #ffffff, #d4af37, #ffffff); 
   border-color: #111;
 }
+
 
 .drop-container:hover .drop-title {
   color: #222;
@@ -330,7 +331,7 @@ input[type=file]::file-selector-button:hover {
   transition: color .2s ease-in-out;
 }
 
-/* Стил за новия персонализиран бутон */
+
 .file {
   background: #2e2e2e;
   color: #d4af37;
@@ -354,18 +355,18 @@ input[type=file]::file-selector-button:hover {
 
 
 #upload-section h1, #upload-section button {
-  font-size: 3em; /* Увеличава размера на текста и бутоните */
+  font-size: 3em; 
 }
 
 #upload-section button {
-  padding: 10px 20px; /* Увеличава размера на бутоните */
-  font-size: 2em; /* Увеличава размера на текста в бутоните */
+  padding: 10px 20px; 
+  font-size: 2em; 
 }
 
 #upload-status {
   margin-top: 10px;
   color: red;
-  font-size: 1.2em; /* Увеличава размера на текста за съобщението за статус */
+  font-size: 1.2em; 
 }
 
 
@@ -591,4 +592,41 @@ input[type=file]::file-selector-button:hover {
 
 #about a:hover {
   text-decoration: underline;
+}
+
+.gif-detailed-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #d4af37;
+  padding: 20px;
+  z-index: 1001;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#gif-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+#close-gif-info {
+  display: block;
+  margin-bottom: 10px;
+  background: #d4af37;
+  color: #2e2e2e;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#close-gif-info:hover {
+  background: #2e2e2e;
+  color: #d4af37;
 }

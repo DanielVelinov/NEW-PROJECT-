@@ -1,5 +1,5 @@
 export const toGifDetailedView = (gif) => `
-<div class="gif-detailed">
+<div class="gif-detailed-overlay">
     <button id="close-gif-info">Close</button>
     <img src="${gif.images.downsized_medium.url}" alt="${gif.title}">
     <h3>${gif.title}</h3>

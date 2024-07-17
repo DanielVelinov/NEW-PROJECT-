@@ -1,4 +1,4 @@
-// src/views/trending-view.js
+
 import { FULL_HEART, EMPTY_HEART } from "../common/constants.js";
 import { renderFavoriteStatus } from "../events/helpers.js";
 
