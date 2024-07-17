@@ -60,3 +60,40 @@ export const loadRandomGifs = async (limit = 1) => {
         return []; // Return an empty array if there's an error
     }
 };
+
+export const fetchUploadedGifs = async (gifIds) => {
+    const ids = gifIds.join(',');
+    try {
+        const response = await fetch(`https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${ids}`);
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching GIFs:', error.message);
+        return null;
+    }
+};
+
+
+export const displayUploadedGifs = async () => {
+    const uploadedGifsContainer = document.getElementById('uploaded-gifs');
+    if (!uploadedGifsContainer) return;
+
+    const uploadedGifs = JSON.parse(localStorage.getItem('uploadedGifs')) || [];
+
+    if (uploadedGifs.length === 0) {
+        uploadedGifsContainer.innerHTML = '<p>No GIFs uploaded yet.</p>';
+        return;
+    }
+
+    const response = await fetchUploadedGifs(uploadedGifs);
+    if (response && response.data) {
+        uploadedGifsContainer.innerHTML = '';
+        response.data.forEach(gif => {
+            const img = document.createElement('img');
+            img.src = gif.images.fixed_width.url;
+            img.classList.add('uploaded-gif');
+            uploadedGifsContainer.appendChild(img);
+        });
+    } else {
+        uploadedGifsContainer.innerHTML = '<p>Error loading GIFs.</p>';
+    }
+};

@@ -6,6 +6,8 @@ import { renderSearchItems } from './events/search-events.js';
 import { handleUpload } from './events/upload-events.js';
 import { loadSingleGif } from './requests/request-service.js';
 import { toGifDetailedView } from './views/gif-views.js';
+import { displayUploadedGifs } from './requests/request-service.js';
+
 
 
 
@@ -107,4 +109,66 @@ document.getElementById('search').addEventListener('keypress', function (event) 
         const searchTerm = event.target.value.trim();
         renderSearchItems(searchTerm);
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const uploadButton = document.getElementById('upload-button');
+
+    if (uploadButton) {
+        uploadButton.addEventListener('click', handleUpload);
+    }
+
+    displayUploadedGifs();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const viewButtons = document.querySelectorAll('.view-trending-btn');
+    viewButtons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            const gifId = button.getAttribute('data-trending-id');
+            const gifInfoDiv = document.getElementById(`gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'block';
+        });
+
+        button.addEventListener('mouseout', () => {
+            const gifId = button.getAttribute('data-trending-id');
+            const gifInfoDiv = document.getElementById(`gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'none';
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const viewButtons = document.querySelectorAll('.view-favorites-btn');
+    viewButtons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            const gifId = button.getAttribute('data-favorites-id');
+            const gifInfoDiv = document.getElementById(`favorites-gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'block';
+        });
+
+        button.addEventListener('mouseout', () => {
+            const gifId = button.getAttribute('data-favorites-id');
+            const gifInfoDiv = document.getElementById(`favorites-gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'none';
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const viewButtons = document.querySelectorAll('.view-search-btn');
+    viewButtons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            const gifId = button.getAttribute('data-search-id');
+            const gifInfoDiv = document.getElementById(`search-gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'block';
+        });
+
+        button.addEventListener('mouseout', () => {
+            const gifId = button.getAttribute('data-search-id');
+            const gifInfoDiv = document.getElementById(`search-gif-info-${gifId}`);
+            gifInfoDiv.style.display = 'none';
+        });
+    });
 });

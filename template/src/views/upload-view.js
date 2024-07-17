@@ -7,5 +7,12 @@ export const toUploadView = () => `
   </label>
     <button id="upload-button" class="upload-button">Upload</button>
     <div id="upload-status"></div>
+    <div id="upload-section">
+    <!-- Existing content for uploading GIFs -->
+    <div id="uploaded-gifs-section">
+      <h2>Your Uploaded GIFs</h2>
+      <div id="uploaded-gifs"></div>
+    </div>
+  </div>
   </div>
 `;
